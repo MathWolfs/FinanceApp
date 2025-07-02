@@ -24,6 +24,7 @@ namespace Fina.Core.Responses
             : base(data, code, message)
         {            
         }
+
         public int CurrentPage { get; set; }
         public int TotalPages => (int)Math.Ceiling(TotalCount / (double)PageSize);
         public int PageSize { get; set; } = Configuration.DefaultPageSize;
