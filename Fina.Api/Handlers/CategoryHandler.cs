@@ -16,7 +16,7 @@ namespace Fina.Api.Handlers
                 UserId = request.UserId,
                 Title = request.Title,
                 Description = request.Description
-            };
+            }; 
 
             try
             {
@@ -60,7 +60,7 @@ namespace Fina.Api.Handlers
                 var query = context
                     .Categories
                     .AsNoTracking()
-                    .Where(x => x.UserId == request.UserId)
+                    .Where(x => x.UserId == request.UserId) 
                     .OrderBy(x => x.Title);
 
                 var categories = await query
