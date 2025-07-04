@@ -15,7 +15,6 @@ namespace Fina.Api.Handlers
         {
             if (request is { Type: ETransactionType.Withdraw, Amount: > 0 })
                 request.Amount *= -1;
-
             try
             {
                 var transaction = new Transaction
@@ -38,7 +37,6 @@ namespace Fina.Api.Handlers
                 return new Response<Transaction?>(null, 500, "Não foi possível criar sua transação.");
             }
         }
-
         public async Task<Response<Transaction?>> DeleteAsync(DeleteTransactionRequest request)
         {
             try
@@ -60,7 +58,6 @@ namespace Fina.Api.Handlers
 
             }
         }
-
         public async Task<Response<Transaction?>> GetByIdAsync(GetTransactionByIdRequest request)
         {
             var transaction = await context
@@ -70,7 +67,6 @@ namespace Fina.Api.Handlers
                 ? new Response<Transaction?>(null, 404, "Transação não encontrada.")
                 : new Response<Transaction?>(transaction);
         }
-
         public async Task<PagedResponse<List<Transaction?>>> GetByPeriodAsync(GetTransactionByPeriodRequest request)
         {
             try
@@ -113,7 +109,6 @@ namespace Fina.Api.Handlers
                 return new PagedResponse<List<Transaction?>>(null, 500, "Não foi possivel obter as transações.");
             }
         }
-
         public async Task<Response<Transaction?>> UpdateAsync(UpdateTransactionRequest request)
         {
             if (request is { Type: ETransactionType.Withdraw, Amount: > 0 })
