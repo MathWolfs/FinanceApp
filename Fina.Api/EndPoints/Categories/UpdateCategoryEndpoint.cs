@@ -15,13 +15,12 @@ namespace Fina.Api.EndPoints.Categories
                 .WithDescription("Atualiza uma categoria")
                 .WithOrder(2)
                 .Produces<Response<Category?>>();
-
         public static async Task<IResult> HandleAsync(
             ICategoryHandler Handler,
             UpdateCategoryRequest request,
             long id)
         {
-            request.UserId = ApiConfiguration.UserId,
+            request.UserId = ApiConfiguration.UserId;
             request.Id = id;
 
             var result = await Handler.UpdateAsync(request);

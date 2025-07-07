@@ -15,7 +15,6 @@ namespace Fina.Api.EndPoints.Categories
                 .WithDescription("Recupera uma categoria")
                 .WithOrder(4)
                 .Produces<Response<Category?>>();
-
         private static async Task<IResult> HandleAsync(
             ICategoryHandler handler,
             long id)
