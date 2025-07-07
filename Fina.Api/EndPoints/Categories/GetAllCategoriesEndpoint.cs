@@ -16,7 +16,7 @@ namespace Fina.Api.EndPoints.Categories
                 .WithSummary("Recupera todas as categorias")
                 .WithDescription("Recupera todas as categorias")
                 .WithOrder(5)
-                .Produces<PagedResponse<List<Category?>>>();
+                .Produces<PagedResponse<List<Category>?>>();
 
         public static async Task<IResult> HandleAsync(
             ICategoryHandler handler,
@@ -30,7 +30,7 @@ namespace Fina.Api.EndPoints.Categories
                 PageSize = pageSize
             };
 
-            var result = await handler.GetAllASync(request);
+            var result = await handler.GetAllAsync(request);
             return result.IsSucess
                 ? TypedResults.Ok(result)
                 : TypedResults.BadRequest(result);
