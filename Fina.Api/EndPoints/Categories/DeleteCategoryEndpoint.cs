@@ -1,11 +1,12 @@
-﻿using Fina.Core.Handlers;
+﻿using Fina.Api.Common.Api;
+using Fina.Core.Handlers;
 using Fina.Core.Models;
 using Fina.Core.Requests.Categories;
 using Fina.Core.Responses;
 
 namespace Fina.Api.EndPoints.Categories
 {
-    public class DeleteCategoryEndpoint
+    public class DeleteCategoryEndpoint : IEndpoint
     {
         public static void Map(IEndpointRouteBuilder app)
             => app.MapDelete("/{id}", HandleAsync)

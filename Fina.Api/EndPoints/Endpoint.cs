@@ -18,8 +18,8 @@ namespace Fina.Api.EndPoints
                 .WithTags("Categories")
                 .MapEndpoint<CreateCategoryEndpoint>()
                 .MapEndpoint<UpdateCategoryEndpoint>()
-                .MapEndpoint<CreateCategoryEndpoint>()
-                .MapEndpoint<CreateCategoryEndpoint>()
+                .MapEndpoint<DeleteCategoryEndpoint>()
+                .MapEndpoint<GetCategoryByIdEndpoint>()
                 .MapEndpoint<GetAllCategoriesEndpoint>();
 
             endpoints.MapGroup("v1/transactions")
