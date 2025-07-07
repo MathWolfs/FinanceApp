@@ -31,7 +31,7 @@ namespace Fina.Api.EndPoints.Categories
             };
 
             var result = await handler.GetAllASync(request);
-            return.IsSucess
+            return result.IsSucess
                 ? TypedResults.Ok(result)
                 : TypedResults.BadRequest(result);
         }
