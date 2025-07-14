@@ -17,7 +17,6 @@ namespace Fina.Api.Handlers
                 Title = request.Title,
                 Description = request.Description
             }; 
-
             try
             {
                 await context.Categories.AddAsync(category);
@@ -126,3 +125,4 @@ namespace Fina.Api.Handlers
         }
     }
 }
+    
