@@ -23,7 +23,7 @@ namespace Fina.Api.EndPoints.Categories
             request.UserId = Api.ApiConfiguration.UserId;
 
             var response = await handler.CreateAsync(request);
-            return response.IsSucess
+            return response.IsSuccess
                 ? TypedResults.Created($"v1/Categories/{response.Data?.Id}",response)
                 : TypedResults.BadRequest(response);
         }

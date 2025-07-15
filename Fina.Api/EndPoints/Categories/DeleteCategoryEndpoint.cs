@@ -26,7 +26,7 @@ namespace Fina.Api.EndPoints.Categories
                 Id = id
             };
             var result = await handler.DeleteAsync(request);
-            return result.IsSucess
+            return result.IsSuccess
                 ? TypedResults.Ok(result)
                 : TypedResults.BadRequest(result);
         }

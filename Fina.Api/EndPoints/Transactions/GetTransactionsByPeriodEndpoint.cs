@@ -34,7 +34,7 @@ namespace Fina.Api.EndPoints.Transactions
             };
 
             var result = await handler.GetByPeriodAsync(request);
-            return result.IsSucess
+            return result.IsSuccess
                 ? TypedResults.Ok(result)
                 : TypedResults.BadRequest(result);
         }

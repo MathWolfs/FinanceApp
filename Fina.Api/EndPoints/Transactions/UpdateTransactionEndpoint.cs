@@ -24,7 +24,7 @@ namespace Fina.Api.EndPoints.Transactions
             request.Id = id;
 
             var result = await handler.UpdateAsync(request);
-            return result.IsSucess
+            return result.IsSuccess
                 ? TypedResults.Ok(result)
                 : TypedResults.BadRequest(result);
         }        

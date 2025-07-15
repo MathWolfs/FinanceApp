@@ -21,7 +21,7 @@ namespace Fina.Api.EndPoints.Transactions
         {
             request.UserId = ApiConfiguration.UserId;
             var result = await handler.CreateAsync(request);
-            return result.IsSucess
+            return result.IsSuccess
                 ? TypedResults.Created($"/{result.Data?.Id}", result)
                 : TypedResults.BadRequest(result.Data);
         }
