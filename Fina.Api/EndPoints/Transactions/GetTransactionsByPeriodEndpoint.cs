@@ -32,7 +32,6 @@ namespace Fina.Api.EndPoints.Transactions
                 StartDate = startDate,
                 EndDate = endDate
             };
-
             var result = await handler.GetByPeriodAsync(request);
             return result.IsSuccess
                 ? TypedResults.Ok(result)

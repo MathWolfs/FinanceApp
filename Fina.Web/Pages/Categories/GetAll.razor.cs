@@ -48,7 +48,7 @@ namespace Fina.Web.Pages.Categories
         public async void OnDeleteButtonClickedAsync(long id, string title)
         {
             var result = await Dialog.ShowMessageBox(
-                "ATENÇÃO",
+                "ATENÇÃO!",
                 $"Ao prosseguir a categoria {title} será removida. Deseja continuar?",
                 yesText: "Excluir",
                 cancelText: "Cancelar");

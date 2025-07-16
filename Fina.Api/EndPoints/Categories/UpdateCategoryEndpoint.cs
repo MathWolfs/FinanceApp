@@ -22,7 +22,6 @@ namespace Fina.Api.EndPoints.Categories
         {
             request.UserId = ApiConfiguration.UserId;
             request.Id = id;
-
             var result = await Handler.UpdateAsync(request);
             return result.IsSuccess
                 ? TypedResults.Ok(result)

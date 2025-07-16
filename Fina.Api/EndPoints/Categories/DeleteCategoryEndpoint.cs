@@ -15,7 +15,6 @@ namespace Fina.Api.EndPoints.Categories
                 .WithDescription("Exclui uma categoria")
                 .WithOrder(3)
                 .Produces<Response<Category?>>();
-
         private static async Task<IResult> HandleAsync(
             ICategoryHandler handler,
             long id)
